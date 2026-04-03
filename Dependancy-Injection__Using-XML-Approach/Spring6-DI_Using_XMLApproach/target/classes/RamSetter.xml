@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<bean id="c1" class="com.DI_Setter.Car">         <!-- Target Class... -->
+<property name="engin" ref="p1"></property>      <!-- Using Setter Method Dependant Class Object "inject" int target class object -->
+</bean>
+<bean id="p1" class="com.DI_Setter.PetrolEngin"> <!-- Dependant Class with constructor calling... -->
+<constructor-arg value="10"></constructor-arg>
+<constructor-arg value="20"></constructor-arg>
+</bean> 
+
+
+
+<bean id="c2" class="com.DI_Setter.Car">          <!-- Target Class... -->
+<property name="engin" ref="d1"></property>       <!-- Using Setter Method Dependant Class Object "inject" int target class object -->
+</bean>
+<bean id="d1" class="com.DI_Setter.DisealEngin"></bean>   <!-- Dependant Class... -->
+
+</beans>

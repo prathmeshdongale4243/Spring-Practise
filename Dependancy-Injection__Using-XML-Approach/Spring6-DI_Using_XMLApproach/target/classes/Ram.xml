@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="p1" class="com.DI.PaymentService">         <!-- Target class Object -->
+    <constructor-arg ref="u1"></constructor-arg>     <!-- Dependant class Object Inject into Target class object-->
+    </bean>
+	<bean id="u1" class="com.DI.UPIPayment"></bean>      <!-- Dependant class Object -->
+	
+	
+	<bean id="p2" class="com.DI.PaymentService">        <!-- Target class Object -->
+	<constructor-arg ref="c1"></constructor-arg>    <!-- Dependant class Object Inject into Target class object-->
+	</bean>
+	<bean id="c1" class="com.DI.CardPayment"></bean>    <!-- Dependant class Object -->
+
+
+</beans>
